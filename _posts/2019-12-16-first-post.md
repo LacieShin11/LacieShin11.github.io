@@ -3,20 +3,51 @@ title: "Welcome to Jekyll!"
 date: 2019-12-16 21:29:28 -0400
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+반려식물 교감 서비스, 플랜토피아(Plantopia)
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+신현경(성신여자대학교 IT학부)
 
-Jekyll also offers powerful support for code snippets:
+▶ 플랜토피아(Plantopia)란?
+√ 사랑하는 반려식물을 더 잘 기를 수 있도록 도와주고, 반려식물과 교감할 수 있도록 도와주는 서비스
+√ Arduino로 자신의 식물 상태를 모니터링하고 챗봇을 통해 반려식물과 대화하면서 더욱 즐겁게 교감할 뿐만 아니라 다양한 원예 지식도 얻을 수 있는 서비스
+√ 스크린샷
 
-​```python
-def print_hi(name):
-  print("hello", name)
-print_hi('Tom')
-​```
+▶ 대표 기능
+√ 반려식물과 관련된 포스트, DIY 영상, 제품 등 다양한 읽을거리 제공
+√ 반려식물 검색 및 생육 정보 제공
+√ 원예 시 들을 수 있는 음악 제공
+√ 기기 연결 여부, 식물 종류, 사진, 애칭을 작성하여 등록한 식물을 성장일기 등을 통해 관리
+√ Arduino와 연결된 식물의 빛, 온도, 습도 정보 확인
+√ 챗봇을 통한 반려식물과의 대화
+≫	감정 교류하기(“나 오늘 힘들었어” 등의 말에 반응)
+≫	식물 정보 알리기(빛, 온도, 습도 정보 제공)
+≫	사용자의 질문에 응답하기
+≫	선택지 제공하기
+≫	인사하기
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
+▶ 기술 스택
+√ Backend 개발 언어 : 자바스크립트 / Framework : Node.js / DBMS : MySQL
+√ Hosting & Storage 서버 호스팅 : AWS EC2 / Database : AWS RDS / 이미지 관리 : Amazon S3
+√ User 안드로이드 개발 언어 : Java / 식물 상태 측정 : Arduino / 챗봇 API : IBM Watson
+√ Version Control GitHub 활용
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
+▶ 플랜토피아 프로그램 구조
+ 
+▶ Database 설계
+√ 서버와 연동된 DB 구조                                   √ 안드로이드 챗봇 DB 구조
+
+▶ 개선 필요 사항
+√ 챗봇의 자연어 데이터 부족으로 인해 한정적인 대화 패턴
+√ 센서가 꽂힌 식물이 여러 개일 경우 안드로이드에서 식별할 수 있도록 처리 필요
+√ 식물 사진 인식을 통한 간편한 식물 검색 기능 필요
+√ 반려식물의 상태에 따른 반려식물이 먼저 대화를 시작하는 기능 필요
+
+▶ 역할
+√ 챗봇 API 활용 및 챗봇 레이아웃 제작
+
+▶ 느낀점
+기획부터 개발까지, 디자이너와 협업하며 많은 회의를 통해 나름의 체계적인 과정을 거치며 만든 첫 작품이라는 점에서 가장 의미가 깊은 프로젝트이다. 이전에 챗봇을 이용한 프로젝트를 진행한 적이 없기 때문에 챗봇 제작 방법을 찾는 것부터가 큰 과제였다. 챗봇의 개념, 원리 등부터 어떤 챗봇 API를 사용할지 수많은 조사와 고민, 그에 따른 번복 끝에 Watson API를 선택하게 되었다. 카카오톡을 이용한 챗봇 등을 제외한 자신의 앱에서 서비스할 수 있는 챗봇 제작에 대한 정보가 당시 별로 많지 않았기 때문에 자료를 찾는 과정에서 힘들었지만 팀원과 협력하며 Watson API를 활용할 수 있었다. 챗봇 레이아웃의 경우에도 채팅 형식의 레이아웃은 기존에 만들던 레이아웃과는 다르게 수신자-송신자 부분을 구분해야 하기에 java 파일에 레이아웃 관련 코드 작성도 함께 해야만 했다. 지금까지 만들었던 것 중 가장 까다로운 레이아웃이었기 때문에 레이아웃 작성에 시간을 많이 소요하였고, 새로운 도전을 했다는 것이 인상 깊게 남는다. 아쉬웠던 점은, GitHub를 통한 버전 관리를 할 때 GitHub 활용법을 제대로 알지 못해서 branch를 따로 만들지 않고 하나의 branch에서만 commit하고 push를 했다는 것이다. GitHub를 사용한 두 번째 프로젝트이기 때문에 잘 활용하지 못했지만, 이것을 교훈으로 삼아 다음 프로젝트부터는 GitHub의 장점이 담긴 기능들을 더 잘 이용할 수 있도록 할 것이다.
+
+▶ GitHub 주소
+https://github.com/LacieShin11/Plantopia
+
